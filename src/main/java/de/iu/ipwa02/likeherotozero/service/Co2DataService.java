@@ -23,11 +23,11 @@ public class Co2DataService {
         return co2DataRepository.findFirstByCountryIgnoreCaseOrderByMsyearDesc(country);
     }
 
-    public Co2Data saveData(Co2Data data) {
+     public Co2Data saveData(Co2Data data) {
         return co2DataRepository.save(data);
     }
 
-    // Hilfsmethode für das Dropdown-Menü im Frontend
+    // Hilfsmethode für das Dropdown-Menü
     public List<String> findAllCountries() {
         return co2DataRepository.findAll().stream()
                 .map(Co2Data::getCountry)

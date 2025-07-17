@@ -20,11 +20,10 @@ public class WebController {
         this.co2DataService = co2DataService;
     }
 
-    // --- Öffentlicher Bereich (MUST 1) ---
     @GetMapping("/")
     public String showPublicPage(Model model) {
         model.addAttribute("countries", co2DataService.findAllCountries());
-        return "index"; // Zeigt templates/index.html
+        return "index";
     }
 
     @PostMapping("/search")
@@ -33,15 +32,13 @@ public class WebController {
         co2DataService.getLatestEmissionByCountry(country)
                 .ifPresent(data -> model.addAttribute("result", data));
         model.addAttribute("selectedCountry", country);
-        return "index"; // Zeigt erneut index.html, aber mit Ergebnis
+        return "index";
     }
 
-
-    // --- Backend-Bereich (MUST 2) ---
     @GetMapping("/backend")
     public String showBackendPage(Model model) {
         model.addAttribute("co2Data", new Co2Data()); // Für das Formular
-        return "backend"; // Zeigt templates/backend.html
+        return "backend";
     }
 
     @PostMapping("/backend/add")

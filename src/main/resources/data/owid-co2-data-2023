@@ -1,0 +1,256 @@
+country;year;co2
+Afghanistan;2023;11020
+Africa;2023;1418739
+Africa (GCP);2023;1418728
+Albania;2023;5144
+Algeria;2023;178133
+Andorra;2023;0.424
+Angola;2023;20781
+Anguilla;2023;0.145
+Antarctica;2023;0.000
+Antigua and Barbuda;2023;0.645
+Argentina;2023;195806
+Armenia;2023;7608
+Aruba;2023;0.867
+Asia;2023;22600221
+Asia (GCP);2023;19747367
+Asia (excl. China and India);2023;7635394
+Australia;2023;382972
+Austria;2023;58578
+Azerbaijan;2023;43937
+Bahamas;2023;2505
+Bahrain;2023;36527
+Bangladesh;2023;113427
+Barbados;2023;1192
+Belarus;2023;56491
+Belgium;2023;83368
+Belize;2023;0.668
+Benin;2023;5592
+Bermuda;2023;0.523
+Bhutan;2023;1713
+Bolivia;2023;23359
+Bonaire Sint Eustatius and Saba;2023;0.115
+Bosnia and Herzegovina;2023;20179
+Botswana;2023;6714
+Brazil;2023;486470
+British Virgin Islands;2023;0.185
+Brunei;2023;11770
+Bulgaria;2023;36094
+Burkina Faso;2023;6187
+Burundi;2023;0.710
+Cambodia;2023;20178
+Cameroon;2023;9941
+Canada;2023;549299
+Cape Verde;2023;0.535
+Central African Republic;2023;0.281
+Central America (GCP);2023;179595
+Chad;2023;3079
+Chile;2023;77288
+China;2023;11902503
+Christmas Island;2023;0.000
+Colombia;2023;105239
+Comoros;2023;0.449
+Congo;2023;7674
+Cook Islands;2023;0.073
+Costa Rica;2023;8279
+Cote d'Ivoire;2023;13196
+Croatia;2023;17524
+Cuba;2023;23097
+Curacao;2023;2023
+Cyprus;2023;7174
+Czechia;2023;85624
+Democratic Republic of Congo;2023;4616
+Denmark;2023;27265
+Djibouti;2023;0.493
+Dominica;2023;0.163
+Dominican Republic;2023;32020
+East Timor;2023;0.632
+Ecuador;2023;43173
+Egypt;2023;269006
+El Salvador;2023;8230
+Equatorial Guinea;2023;6141
+Eritrea;2023;0.621
+Estonia;2023;10019
+Eswatini;2023;1104
+Ethiopia;2023;15227
+Europe;2023;4993221
+Europe (GCP);2023;4993221
+Europe (excl. EU-27);2023;2482599
+Europe (excl. EU-28);2023;2177453
+European Union (27);2023;2510622
+European Union (28);2023;2815768
+Faroe Islands;2023;0.798
+Fiji;2023;1146
+Finland;2023;31622
+France;2023;272476
+French Polynesia;2023;0.916
+Gabon;2023;5411
+Gambia;2023;0.711
+Georgia;2023;11769
+Germany;2023;596151
+Ghana;2023;19647
+Greece;2023;55196
+Greenland;2023;0.596
+Grenada;2023;0.339
+Guatemala;2023;20382
+Guinea;2023;4043
+Guinea-Bissau;2023;0.298
+Guyana;2023;3545
+Haiti;2023;3522
+High-income countries;2023;14014305
+Honduras;2023;11042
+Hong Kong;2023;33871
+Hungary;2023;40190
+Iceland;2023;3762
+India;2023;3062324
+Indonesia;2023;733224
+International aviation;2023;523412
+International shipping;2023;593158
+International transport;2023;
+Iran;2023;817880
+Iraq;2023;176458
+Ireland;2023;34433
+Israel;2023;59489
+Italy;2023;313461
+Jamaica;2023;7649
+Japan;2023;988785
+Jordan;2023;21189
+Kazakhstan;2023;255161
+Kenya;2023;21531
+Kiribati;2023;0.069
+Kosovo;2023;8377
+Kuwait;2023;99233
+Kuwaiti Oil Fires;2023;
+Kuwaiti Oil Fires (GCP);2023;0.000
+Kyrgyzstan;2023;10152
+Laos;2023;24796
+Latvia;2023;6513
+Least developed countries (Jones et al.);2023;
+Lebanon;2023;19475
+Lesotho;2023;3889
+Liberia;2023;0.771
+Libya;2023;60976
+Liechtenstein;2023;0.157
+Lithuania;2023;12462
+Low-income countries;2023;196580
+Lower-middle-income countries;2023;4882584
+Luxembourg;2023;6993
+Macao;2023;1057
+Madagascar;2023;4476
+Malawi;2023;1752
+Malaysia;2023;288824
+Maldives;2023;2062
+Mali;2023;6762
+Malta;2023;1822
+Marshall Islands;2023;0.153
+Mauritania;2023;4413
+Mauritius;2023;4139
+Mexico;2023;482623
+Micronesia (country);2023;0.149
+Middle East (GCP);2023;2861176
+Moldova;2023;5962
+Monaco;2023;
+Mongolia;2023;46870
+Montenegro;2023;2328
+Montserrat;2023;0.022
+Morocco;2023;68668
+Mozambique;2023;8023
+Myanmar;2023;30233
+Namibia;2023;4174
+Nauru;2023;0.057
+Nepal;2023;16677
+Netherlands;2023;118668
+New Caledonia;2023;5068
+New Zealand;2023;30119
+Nicaragua;2023;5588
+Niger;2023;2598
+Nigeria;2023;128540
+Niue;2023;0.008
+Non-OECD (GCP);2023;25442199
+North America;2023;6123550
+North America (GCP);2023;5943966
+North America (excl. USA);2023;1212159
+North Korea;2023;60764
+North Macedonia;2023;7449
+Norway;2023;38901
+OECD (GCP);2023;11232802
+OECD (Jones et al.);2023;
+Oceania;2023;430303
+Oceania (GCP);2023;421981
+Oman;2023;78511
+Pakistan;2023;200667
+Palau;2023;0.222
+Palestine;2023;3497
+Panama;2023;14018
+Papua New Guinea;2023;8322
+Paraguay;2023;8139
+Peru;2023;55864
+Philippines;2023;154579
+Poland;2023;289282
+Portugal;2023;37228
+Qatar;2023;115712
+Romania;2023;68239
+Russia;2023;1815925
+Rwanda;2023;1540
+Ryukyu Islands;2023;
+Ryukyu Islands (GCP);2023;0.000
+Saint Helena;2023;0.011
+Saint Kitts and Nevis;2023;0.233
+Saint Lucia;2023;0.511
+Saint Pierre and Miquelon;2023;0.056
+Saint Vincent and the Grenadines;2023;0.237
+Samoa;2023;0.257
+San Marino;2023;
+Sao Tome and Principe;2023;0.166
+Saudi Arabia;2023;736205
+Senegal;2023;11901
+Serbia;2023;42358
+Seychelles;2023;0.551
+Sierra Leone;2023;1232
+Singapore;2023;49253
+Sint Maarten (Dutch part);2023;0.693
+Slovakia;2023;30739
+Slovenia;2023;11328
+Solomon Islands;2023;0.303
+Somalia;2023;0.558
+South Africa;2023;401893
+South America;2023;1108965
+South America (GCP);2023;1108965
+South Korea;2023;577417
+South Sudan;2023;1580
+Spain;2023;221616
+Sri Lanka;2023;20318
+Sudan;2023;20001
+Suriname;2023;2647
+Sweden;2023;36556
+Switzerland;2023;32737
+Syria;2023;25503
+Taiwan;2023;261153
+Tajikistan;2023;9055
+Tanzania;2023;18066
+Thailand;2023;264389
+Togo;2023;2620
+Tonga;2023;0.199
+Trinidad and Tobago;2023;34318
+Tunisia;2023;32793
+Turkey;2023;432077
+Turkmenistan;2023;63363
+Turks and Caicos Islands;2023;0.371
+Tuvalu;2023;0.012
+Uganda;2023;5614
+Ukraine;2023;136461
+United Arab Emirates;2023;229384
+United Kingdom;2023;305146
+United States;2023;4911391
+Upper-middle-income countries;2023;17581070
+Uruguay;2023;7866
+Uzbekistan;2023;124768
+Vanuatu;2023;0.226
+Vatican;2023;
+Venezuela;2023;99569
+Vietnam;2023;334726
+Wallis and Futuna;2023;0.031
+World;2023;37791570
+Yemen;2023;10035
+Zambia;2023;7749
+Zimbabwe;2023;11164

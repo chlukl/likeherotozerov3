@@ -20,21 +20,20 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/backend/**").hasRole("SCIENTIST") // Schütze alle Backend-URLs
-                        .anyRequest().permitAll() // Alle anderen URLs sind öffentlich
+                        .requestMatchers("/backend/**").hasRole("SCIENTIST")
+                        .anyRequest().permitAll()
                 )
-                .formLogin(withDefaults()) // Standard-Login-Seite von Spring Security
-                .logout(logout -> logout.logoutSuccessUrl("/")); // Nach Logout zur Startseite
+                .formLogin(withDefaults())
+                .logout(logout -> logout.logoutSuccessUrl("/"));
         return http.build();
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
-        // Für die Fallstudie reicht ein einfacher In-Memory-Benutzer.
-        // In einer echten Anwendung kämen die Benutzer aus einer Datenbank.
+        // In-Memory-Benutzer - kein Benutzer aus DB
         UserDetails user = User.withDefaultPasswordEncoder()
                 .username("wissenschaftler")
-                .password("passwort123") // Passwort sollte sicher gespeichert werden!
+                .password("passwort123")
                 .roles("SCIENTIST")
                 .build();
         return new InMemoryUserDetailsManager(user);

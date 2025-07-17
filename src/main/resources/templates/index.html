@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<html lang="de" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
   </style>
 </head>
 <body>
-<!-- Navigation -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -44,60 +44,82 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
 <div class="hero-section">
   <div class="container text-center">
     <h1 class="display-4 mb-4">
-      <i class="bi bi-globe"></i> CO2 Emissionen Tracker
+      <i class="bi bi-globe"></i> CO₂ Emissionen Tracker
     </h1>
     <p class="lead">Transparenz für eine nachhaltige Zukunft</p>
     <p class="mb-0">Unterstützt von NABU, BUND und weiteren Naturverbänden</p>
   </div>
 </div>
 
-<!-- Main Content -->
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <!-- Search Card -->
       <div class="card mb-4">
         <div class="card-body">
           <h2 class="card-title text-center mb-4">
-            <i class="bi bi-search"></i> CO2-Emissionen nach Land
+            <i class="bi bi-search"></i> CO₂-Emissionen nach Land
           </h2>
           <p class="text-muted text-center mb-4">
-            Finde die aktuellsten verfügbaren CO2-Emissionsdaten für dein Land
+            Finde die aktuellsten verfügbaren CO₂-Emissionsdaten für dein Land
           </p>
 
-          <form th:action="@{/search}" method="post">
-            <div class="row">
-              <div class="col-md-8">
-                <label>
-                  <select class="form-select" name="country" required>
-                    <option value="">🌍 Land auswählen...</option>
-                    <option th:each="c : ${countries}"
-                            th:value="${c}"
-                            th:text="${c}"
-                            th:selected="${c == selectedCountry}">
-                    </option>
-                  </select>
-                </label>
-              </div>
-              <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">
-                  <i class="bi bi-search"></i> Suchen
-                </button>
+          <form th:action="@{/search}" method="post" class="row g-2 align-items-end mb-5">
+            <div class="col-md-10 position-relative">
+              <label for="countrySearch" class="form-label">Land suchen:</label>
+              <input type="text" id="countrySearch" name="country"
+                     class="form-control" placeholder="Tippe einen Ländernamen..." autocomplete="off" required>
+              <div id="suggestions"
+                   class="list-group position-absolute"
+                   style="z-index:99; width:100%; max-height:220px; overflow-y:auto;">
               </div>
             </div>
+            <div class="col-md-2 d-grid">
+              <button type="submit" class="btn btn-primary mt-4 w-100">
+                <i class="bi bi-search"></i> Suchen
+              </button>
+            </div>
           </form>
-        </div>
-      </div>
 
-      <div th:if="${result}" class="card result-card">
-        <div class="card-body">
-          <h3 class="card-title">
-            <i class="bi bi-bar-chart"></i> Ergebnis für <span th:text="${result.country}"></span>
-          </h3>
+          <script th:inline="javascript">
+            const countries = [[${countries}]];
+            const searchInput = document.getElementById('countrySearch');
+            const suggestionsDiv = document.getElementById('suggestions');
+
+            searchInput.addEventListener('input', function() {
+              const query = this.value.toLowerCase();
+              suggestionsDiv.innerHTML = '';
+              if (query.length === 0) return;
+              const filtered = countries.filter(c =>
+                      c.toLowerCase().includes(query)
+              );
+              filtered.slice(0, 10).forEach(country => {
+                const item = document.createElement('div');
+                item.className = 'list-group-item list-group-item-action';
+                item.textContent = country;
+                item.style.cursor = 'pointer';
+                item.onclick = function() {
+                  searchInput.value = country;
+                  suggestionsDiv.innerHTML = '';
+                };
+                suggestionsDiv.appendChild(item);
+              });
+            });
+
+            document.addEventListener('click', function(e) {
+              if (!searchInput.contains(e.target)) {
+                suggestionsDiv.innerHTML = '';
+              }
+            });
+          </script>
+
+          <div th:if="${result}" class="card result-card">
+          <div class="card-body">
+            <h3 class="card-title">
+              <i class="bi bi-bar-chart"></i> Ergebnis für <span th:text="${result.country}"></span>
+            </h3>
           <div class="row">
             <div class="col-md-6">
               <p class="card-text">
@@ -112,14 +134,13 @@
               </p>
             </div>
           </div>
-          <div class="alert alert-info mt-3">
-            <i class="bi bi-info-circle"></i>
-            Diese Daten stammen aus wissenschaftlichen Erhebungen und werden regelmäßig aktualisiert.
+            <div class="alert alert-info mt-3">
+              <i class="bi bi-info-circle"></i>
+              Diese Daten stammen aus wissenschaftlichen Erhebungen der World Bank Open Data.
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- No Results -->
       <div th:if="${selectedCountry != null and result == null}" class="alert alert-warning">
         <i class="bi bi-exclamation-triangle"></i>
         Für das Land <strong th:text="${selectedCountry}"></strong> wurden keine Daten gefunden.
@@ -128,7 +149,6 @@
   </div>
 </div>
 
-<!-- Footer -->
 <footer class="bg-dark text-white py-4 mt-5">
   <div class="container text-center">
     <p class="mb-0">
@@ -139,5 +159,7 @@
     </p>
   </div>
 </footer>
+</div>
+</div>
 </body>
 </html>

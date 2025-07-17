@@ -4,17 +4,26 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data; // Lombok für Getter, Setter, etc.
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity // Markiert diese Klasse als JPA-Entität
-@Data   // Lombok generiert automatisch Getter, Setter, toString, equals, hashCode
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Co2Data {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String country;
-    private int msyear;
-    private double emissionValue; // In kt
+    private Integer msyear; //Integer statt int, damit Platzhalter im Backend greift (sonst 0)
+    private double emissionValue;
+
+    public Co2Data(String country, int msyear, double emissionValue) {
+        this.country = country;
+        this.msyear = msyear;
+        this.emissionValue = emissionValue;
+    }
 }
