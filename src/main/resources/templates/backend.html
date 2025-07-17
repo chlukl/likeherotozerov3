@@ -2,39 +2,125 @@
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Backend - Daten hinzufügen</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss@2.2.0/simple.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal für Forschende - Like Hero To Zero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .dashboard-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem 0;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <h1>Backend: Datenverwaltung</h1>
-  <nav>
-    <a href="/">Zur öffentlichen Seite</a>
-    <form th:action="@{/logout}" method="post" style="display: inline;">
-      <button type="submit">Logout</button>
-    </form>
-  </nav>
-</header>
 
-<main>
-  <h2>Neue CO2-Daten hinzufügen</h2>
-
-  <div th:if="${successMessage}" style="color: green; margin-bottom: 1em;">
-    <p th:text="${successMessage}"></p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="bi bi-graph-up"></i> Like Hero To Zero
+    </a>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="/">
+        <i class="bi bi-house"></i> Öffentliche Ansicht
+      </a>
+      <form th:action="@{/logout}" method="post" class="d-inline">
+        <button type="submit" class="btn btn-outline-light btn-sm">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </form>
+    </div>
   </div>
+</nav>
 
-  <form th:action="@{/backend/add}" th:object="${co2Data}" method="post">
-    <label for="country">Land:</label>
-    <input type="text" id="country" th:field="*{country}" required>
+<div class="dashboard-header">
+  <div class="container">
+    <h1><i class="bi bi-person-badge"></i>Portal für Forschende</h1>
+    <p class="mb-0">Datenverwaltung für Klimaforschende</p>
+  </div>
+</div>
 
-    <label for="year">Jahr:</label>
-    <input type="number" id="year" th:field="*{msyear}" required>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Success Message -->
+      <div th:if="${successMessage}" class="alert alert-success alert-dismissible">
+        <i class="bi bi-check-circle"></i>
+        <span th:text="${successMessage}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
 
-    <label for="emissionValue">Emission (in kt):</label>
-    <input type="number" step="0.01" id="emissionValue" th:field="*{emissionValue}" required>
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">
+            <i class="bi bi-plus-circle"></i> Neue CO2-Daten hinzufügen
+          </h3>
+        </div>
+        <div class="card-body">
+          <p class="text-muted">
+            Hier können Sie als Wissenschaftler:in neue Klimadaten zur Datenbank hinzufügen.
+          </p>
 
-    <button type="submit">Daten speichern</button>
-  </form>
-</main>
+          <form th:action="@{/backend/add}" th:object="${co2Data}" method="post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="country" class="form-label">
+                    <i class="bi bi-globe"></i> Land
+                  </label>
+                  <input type="text"
+                         class="form-control"
+                         id="country"
+                         th:field="*{country}"
+                         placeholder="z.B. Germany"
+                         required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="msyear" class="form-label">
+                    <i class="bi bi-calendar"></i> Messjahr
+                  </label>
+                  <input type="number"
+                         class="form-control"
+                         id="msyear"
+                         th:field="*{msyear}"
+                         placeholder="2025"
+                         min="1900"
+                         max="2030"
+                         required>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="emissionValue" class="form-label">
+                <i class="bi bi-bar-chart"></i> CO2-Emissionen (in kt)
+              </label>
+              <input type="number"
+                     class="form-control"
+                     id="emissionValue"
+                     th:field="*{emissionValue}"
+                     placeholder="675000.00"
+                     step="0.01"
+                     min="0"
+                     required>
+              <div class="form-text">
+                Geben Sie die CO2-Emissionen in Kilotonnen an.
+              </div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg">
+                <i class="bi bi-save"></i> Daten speichern
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
