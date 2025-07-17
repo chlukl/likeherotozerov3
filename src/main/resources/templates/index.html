@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Like Hero To Zero - CO2 Emissionen</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss@2.2.0/simple.min.css">
+</head>
+<body>
+<header>
+  <h1>Like Hero To Zero</h1>
+  <p>Aktuelle CO2-Emissionsdaten weltweit</p>
+  <nav>
+    <a href="/">Startseite</a>
+    <a href="/backend">Backend für Wissenschaftler</a>
+  </nav>
+</header>
+
+<main>
+  <h2>CO2-Ausstoß nach Land suchen</h2>
+
+  <form th:action="@{/search}" method="post">
+    <label for="country">Land auswählen:</label>
+    <select id="country" name="country" required>
+      <option value="">Bitte wählen...</option>
+      <option th:each="c : ${countries}" th:value="${c}" th:text="${c}" th:selected="${c == selectedCountry}"></option>
+    </select>
+    <button type="submit">Suchen</button>
+  </form>
+
+  <div th:if="${result}">
+    <h3>Ergebnis für <span th:text="${result.country}"></span></h3>
+    <p>
+      Der aktuellste erfasste CO2-Ausstoß betrug
+      <strong><span th:text="${#numbers.formatDecimal(result.emissionValue, 1, 'POINT', 2, 'COMMA')}"></span> kt</strong>
+      im Jahr <strong th:text="${result.msyear}"></strong>.
+    </p>
+  </div>
+  <div th:if="${selectedCountry != null and result == null}">
+    <p>Für das Land <strong th:text="${selectedCountry}"></strong> wurden keine Daten gefunden.</p>
+  </div>
+</main>
+
+</body>
+</html>
