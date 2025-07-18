@@ -28,12 +28,18 @@ JavaScript
 Maven
 Java
 
+Voraussetzungen:
+Java 17+
+Maven 3.6+
+
 Schnellstart-Anleitung:
 Repository Klonen
 git clone https://github.com/chlukl/likeherotozerov3.git
 cd likeherotozerov3
 
 Abhängigkeiten installieren und Anwendung starten
+mvn clean isntall
+
 mvn spring-boot:run
 
 Die Anwendung ist unter http://localhost:8080 verfügbar
