@@ -20,15 +20,11 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/backend/**").hasRole("SCIENTIST")
                         .anyRequest().permitAll())
                 .formLogin(withDefaults())
                 .logout(logout -> logout.logoutSuccessUrl("/"));
-        http.headers(headers -> headers.frameOptions().sameOrigin());
-        http.csrf(csrf -> csrf
-                .ignoringRequestMatchers("/h2-console/**")
-        );
+
         return http.build();
     }
 
