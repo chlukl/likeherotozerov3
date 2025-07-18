@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenfreigabe - Like Hero To Zero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .dashboard-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem 0;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="d-flex flex-column min-vh-100">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="bi bi-graph-up"></i> Like Hero To Zero
+    </a>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="/">
+        <i class="bi bi-house"></i> Home
+      </a>
+      <a class="nav-link" href="/backend">
+        <i class="bi bi-plus-circle"></i> Daten hinzufügen
+      </a>
+
+      <form th:action="@{/logout}" method="post" class="d-inline">
+        <button type="submit" class="btn btn-outline-light btn-sm">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard-header">
+  <div class="container">
+    <h1><i class="bi bi-person-badge"></i>Portal für Administratoren</h1>
+    <p class="mb-0">Datenverwaltung für die Freigabe von Daten</p>
+  </div>
+</div>
+
+  <main class="flex-fill">
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h1 class="mb-4">
+        <i class="bi bi-check-circle"></i> Datenfreigabe
+      </h1>
+
+      <div th:if="${successMessage}" class="alert alert-success alert-dismissible fade show">
+        <i class="bi bi-check-circle"></i>
+        <span th:text="${successMessage}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+
+      <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show">
+        <i class="bi bi-exclamation-triangle"></i>
+        <span th:text="${errorMessage}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+
+      <div class="card">
+        <div class="card-header bg-warning text-dark">
+          <h3 class="mb-0">
+            <i class="bi bi-clock"></i> Zu prüfende Datensätze
+          </h3>
+        </div>
+        <div class="card-body">
+          <div th:if="${#lists.isEmpty(pendingData)}" class="text-center py-4">
+            <p class="text-muted">Keine Datensätze zur Prüfung vorhanden.</p>
+          </div>
+
+          <div th:if="${!#lists.isEmpty(pendingData)}" class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Land</th>
+                <th>Jahr</th>
+                <th>CO2-Emission (kt)</th>
+                <th>Aktion</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="data : ${pendingData}">
+                <td th:text="${data.country}"></td>
+                <td th:text="${data.msyear}"></td>
+                <td th:text="${#numbers.formatDecimal(data.emissionValue, 1, 'POINT', 2, 'COMMA')}"></td>
+                <td>
+                  <form th:action="@{/backend/approve/{id}(id=${data.id})}"
+                        method="post" style="display:inline;">
+                    <button class="btn btn-success btn-sm" type="submit"
+                            onclick="return confirm('Datensatz genehmigen?')">
+                      <i class="bi bi-check-lg"></i> Genehmigen
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="/backend" class="btn btn-secondary">
+          <i class="bi bi-arrow-left"></i> Zurück zur Dateneingabe
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">
+        © 2025 Like Hero To Zero |
+        <a href="https://github.com/chlukl/likeherotozerov3" class="text-white-50">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+      </p>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+</body>
+</html>

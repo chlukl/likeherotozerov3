@@ -21,9 +21,12 @@ public class Co2Data {
     private Integer msyear; //Integer statt int, damit Platzhalter im Backend greift (sonst 0)
     private double emissionValue;
 
-    public Co2Data(String country, int msyear, double emissionValue) {
+    private Boolean approved = false; //Boolean statt boolean - Probleme in Co2DataService
+
+    public Co2Data(String country, int msyear, double emissionValue, Boolean approved) {
         this.country = country;
         this.msyear = msyear;
         this.emissionValue = emissionValue;
+        this.approved = approved;
     }
 }

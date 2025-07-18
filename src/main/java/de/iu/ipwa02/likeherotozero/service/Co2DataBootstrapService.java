@@ -40,7 +40,7 @@ public class Co2DataBootstrapService {
                 String country = t[0].trim();
                 int year = Integer.parseInt(t[1].trim());
                 double emission = Double.parseDouble(t[2].trim());
-                repo.save(new Co2Data(country, year, emission));
+                repo.save(new Co2Data(country, year, emission, true));
                 imported++;
             }
         } catch (Exception e) {

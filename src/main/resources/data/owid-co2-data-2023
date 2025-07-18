@@ -104,9 +104,6 @@ Hungary;2023;40190
 Iceland;2023;3762
 India;2023;3062324
 Indonesia;2023;733224
-International aviation;2023;523412
-International shipping;2023;593158
-International transport;2023;
 Iran;2023;817880
 Iraq;2023;176458
 Ireland;2023;34433
@@ -120,12 +117,9 @@ Kenya;2023;21531
 Kiribati;2023;0.069
 Kosovo;2023;8377
 Kuwait;2023;99233
-Kuwaiti Oil Fires;2023;
-Kuwaiti Oil Fires (GCP);2023;0.000
 Kyrgyzstan;2023;10152
 Laos;2023;24796
 Latvia;2023;6513
-Least developed countries (Jones et al.);2023;
 Lebanon;2023;19475
 Lesotho;2023;3889
 Liberia;2023;0.771
@@ -149,7 +143,7 @@ Mexico;2023;482623
 Micronesia (country);2023;0.149
 Middle East (GCP);2023;2861176
 Moldova;2023;5962
-Monaco;2023;
+Monaco;2023;19400
 Mongolia;2023;46870
 Montenegro;2023;2328
 Montserrat;2023;0.022
@@ -174,7 +168,6 @@ North Korea;2023;60764
 North Macedonia;2023;7449
 Norway;2023;38901
 OECD (GCP);2023;11232802
-OECD (Jones et al.);2023;
 Oceania;2023;430303
 Oceania (GCP);2023;421981
 Oman;2023;78511
@@ -192,15 +185,13 @@ Qatar;2023;115712
 Romania;2023;68239
 Russia;2023;1815925
 Rwanda;2023;1540
-Ryukyu Islands;2023;
-Ryukyu Islands (GCP);2023;0.000
 Saint Helena;2023;0.011
 Saint Kitts and Nevis;2023;0.233
 Saint Lucia;2023;0.511
 Saint Pierre and Miquelon;2023;0.056
 Saint Vincent and the Grenadines;2023;0.237
 Samoa;2023;0.257
-San Marino;2023;
+San Marino;2023;10946
 Sao Tome and Principe;2023;0.166
 Saudi Arabia;2023;736205
 Senegal;2023;11901
@@ -246,7 +237,6 @@ Upper-middle-income countries;2023;17581070
 Uruguay;2023;7866
 Uzbekistan;2023;124768
 Vanuatu;2023;0.226
-Vatican;2023;
 Venezuela;2023;99569
 Vietnam;2023;334726
 Wallis and Futuna;2023;0.031
