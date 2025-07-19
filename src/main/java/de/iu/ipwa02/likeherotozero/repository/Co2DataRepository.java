@@ -9,14 +9,8 @@ import java.util.Optional;
 
 @Repository
 public interface Co2DataRepository extends JpaRepository<Co2Data, Long> {
-
-    Optional<Co2Data> findFirstByCountryIgnoreCaseOrderByMsyearDesc(String country);
-
-    List<Co2Data> findByApprovedFalse();
-
-    List<Co2Data> findByApprovedTrue();
-
-    Optional<Co2Data> findFirstByCountryIgnoreCaseAndApprovedTrueOrderByMsyearDesc(String country);
-
     List<Co2Data> findByApprovedTrueOrderByCountryAsc();
+    Optional<Co2Data> findFirstByCountryIgnoreCaseAndApprovedTrueOrderByMsyearDesc(String country);
+    List<Co2Data> findByApprovedFalse();
+    List<Co2Data> findByApprovedTrue();
 }
