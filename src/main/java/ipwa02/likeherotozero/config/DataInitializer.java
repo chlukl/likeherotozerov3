@@ -1,7 +1,7 @@
-package de.iu.ipwa02.likeherotozero.config;
+package ipwa02.likeherotozero.config;
 
-import de.iu.ipwa02.likeherotozero.service.Co2DataBootstrapService;
-import de.iu.ipwa02.likeherotozero.repository.Co2DataRepository;
+import ipwa02.likeherotozero.service.Co2DataBootstrapService;
+import ipwa02.likeherotozero.repository.Co2DataRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

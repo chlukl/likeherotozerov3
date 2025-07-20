@@ -1,4 +1,4 @@
-package de.iu.ipwa02.likeherotozero;
+package ipwa02.likeherotozero;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

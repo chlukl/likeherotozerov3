@@ -1,7 +1,7 @@
-package de.iu.ipwa02.likeherotozero.service;
+package ipwa02.likeherotozero.service;
 
-import de.iu.ipwa02.likeherotozero.model.Co2Data;
-import de.iu.ipwa02.likeherotozero.repository.Co2DataRepository;
+import ipwa02.likeherotozero.model.Co2Data;
+import ipwa02.likeherotozero.repository.Co2DataRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
-package de.iu.ipwa02.likeherotozero.service;
+package ipwa02.likeherotozero.service;
 
-import de.iu.ipwa02.likeherotozero.model.Co2Data;
-import de.iu.ipwa02.likeherotozero.repository.Co2DataRepository;
+import ipwa02.likeherotozero.model.Co2Data;
+import ipwa02.likeherotozero.repository.Co2DataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,9 +49,5 @@ public class Co2DataService {
         );
         data.setApproved(true);
         co2DataRepository.save(data);
-    }
-
-    public List<Co2Data> getApprovedData() {
-        return co2DataRepository.findByApprovedTrue();
     }
 }

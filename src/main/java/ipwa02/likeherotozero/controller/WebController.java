@@ -1,7 +1,7 @@
-package de.iu.ipwa02.likeherotozero.controller;
+package ipwa02.likeherotozero.controller;
 
-import de.iu.ipwa02.likeherotozero.model.Co2Data;
-import de.iu.ipwa02.likeherotozero.service.Co2DataService;
+import ipwa02.likeherotozero.model.Co2Data;
+import ipwa02.likeherotozero.service.Co2DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

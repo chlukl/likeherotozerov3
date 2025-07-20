@@ -1,4 +1,4 @@
-package de.iu.ipwa02.likeherotozero.model;
+package ipwa02.likeherotozero.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

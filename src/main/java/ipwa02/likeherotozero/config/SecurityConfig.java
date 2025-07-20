@@ -1,4 +1,4 @@
-package de.iu.ipwa02.likeherotozero.config;
+package ipwa02.likeherotozero.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

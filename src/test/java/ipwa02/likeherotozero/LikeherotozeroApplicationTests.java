@@ -1,4 +1,4 @@
-package de.iu.ipwa02.likeherotozero;
+package ipwa02.likeherotozero;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
