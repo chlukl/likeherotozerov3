@@ -20,6 +20,7 @@ Techstack:
 Spring Boot
 Spring Data JPA
 Spring Security
+Lombok
 Hibernate
 H2 Database
 Thymeleaf
@@ -29,7 +30,7 @@ Maven
 Java
 
 Voraussetzungen:
-Java 17+
+JDK Java 17+
 Maven 3.6+
 
 Schnellstart-Anleitung:
@@ -37,10 +38,11 @@ Repository Klonen
 git clone https://github.com/chlukl/likeherotozerov3.git
 cd likeherotozerov3
 
-Abhängigkeiten installieren und Anwendung starten
-mvn clean isntall
-
+Abhängigkeiten installieren (funktioniert nicht bei Bundled Maven-Versionen):
+mvn clean install
 mvn spring-boot:run
+Alternativ in Eclipse: Rechtsklick Projekt Run as Maven clean, install
+
 
 Die Anwendung ist unter http://localhost:8080 verfügbar
 Der Backend-Bereich ist mit folgenden Zugangsdaten zugänglich:
